@@ -1,1 +1,7 @@
-*
+/*
+!/.dotfiles
+!/.config/nvim
+!.zshrc
+!.zprofile
+!Brewfile
+.DS_Store
