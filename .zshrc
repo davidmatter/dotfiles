@@ -25,23 +25,36 @@ fi
 ####### user config #######
 ###########################
 
+# Node
+export NODE_COMPILE_CACHE=~/.cache/nodejs-compile-cache
+
 # pnpm
-export PNPM_HOME="~/Library/pnpm"
+export PNPM_HOME=~/Library/pnpm
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 
+# bun completions
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+
 # bun
-[ -s "/Users/matterd/.bun/_bun" ] && source "~/.bun/_bun"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 # Aliases
 alias p="pnpm"
+alias po="pnpm outdated -r"
+alias pu="pnpm update -r"
 alias b="bun"
+alias gpl="git pull"
+alias gps="git push"
+alias gc="git checkout"
+alias gcm="git checkout master"
+alias gs="git status"
 
 ###########################
 ########### PATH ##########
 ###########################
 export PATH="$PATH:/usr/local/share/dotnet/x64"
+
